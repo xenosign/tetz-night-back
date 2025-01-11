@@ -20,4 +20,12 @@ public class VoteServiceImpl implements VoteService {
         counts.put("불참", voteRepository.countByVoteType(Vote.VoteType.불참));
         return counts;
     }
+
+    // 투표 생성
+    public Vote createVote(String user, Vote.VoteType voteType) {
+        Vote vote = new Vote();
+        vote.setUser(user);
+        vote.setVoteType(voteType);
+        return voteRepository.save(vote);
+    }
 }
