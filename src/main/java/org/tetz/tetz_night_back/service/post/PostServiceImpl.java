@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 import org.tetz.tetz_night_back.dto.post.PostDto;
 import org.tetz.tetz_night_back.entity.post.Post;
 import org.tetz.tetz_night_back.entity.post.PostLike;
+import org.tetz.tetz_night_back.repository.post.PostLikeRepository;
 import org.tetz.tetz_night_back.repository.post.PostRepository;
 
 import java.math.BigInteger;
@@ -19,6 +20,7 @@ import java.util.stream.Collectors;
 @RequiredArgsConstructor
 public class PostServiceImpl implements PostService {
     private final PostRepository postRepository;
+    private final PostLikeRepository postLikeRepository;
 
     public List<PostDto> getAllPosts(String currentUser) {
         List<Object[]> results = postRepository.findAllPostsWithLikeInfo(currentUser);
@@ -42,6 +44,8 @@ public class PostServiceImpl implements PostService {
         post.setUser(user);  // Request에서 받은 uuid 사용
         post.setCreatedAt(new Timestamp(System.currentTimeMillis()));
 
+        System.out.println(post.getContent());
+
         Post savedPost = postRepository.save(post);
 
         return new PostDto(
@@ -59,14 +63,13 @@ public class PostServiceImpl implements PostService {
         Post post = postRepository.findById(postId)
                 .orElseThrow(() -> new IllegalArgumentException("Post not found"));
 
-        Optional<PostLike> existingLike = post.getLikes().stream()
-                .filter(like -> like.getUser().equals(currentUser))
-                .findFirst();
+        Optional<PostLike> existingLike = postLikeRepository.findByPostIdAndUser(postId, currentUser);
 
         if (existingLike.isPresent()) {
-            post.getLikes().remove(existingLike.get());
+            postLikeRepository.delete(existingLike.get());  // 직접 삭제
         } else {
-            post.getLikes().add(new PostLike(post, currentUser));
+            PostLike newLike = new PostLike(post, currentUser);
+            postLikeRepository.save(newLike);  // 직접 저장
         }
     }
 }

@@ -23,7 +23,7 @@ public interface PostRepository extends JpaRepository<Post, Long> {
         LEFT JOIN post_likes pl ON p.id = pl.post_id
         LEFT JOIN post_likes pl2 ON p.id = pl2.post_id AND pl2.user = :currentUser
         GROUP BY p.id, p.content, p.user, p.created_at
-        ORDER BY COUNT(DISTINCT pl.id) DESC, p.id DESC
+        ORDER BY COUNT(DISTINCT pl.id) DESC, p.created_at ASC
         """,
             nativeQuery = true)
     List<Object[]> findAllPostsWithLikeInfo(@Param("currentUser") String currentUser);
