@@ -9,5 +9,5 @@ import java.util.Map;
 @Service
 public interface VoteService {
     Map<String, Long> getVoteCounts();
-    Vote createVote(String user, Vote.VoteType voteType);
+    Vote createOrUpdateVote(String user, Vote.VoteType voteType);
 }

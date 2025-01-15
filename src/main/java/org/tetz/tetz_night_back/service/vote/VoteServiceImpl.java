@@ -8,6 +8,7 @@ import org.tetz.tetz_night_back.repository.VoteRepository;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
@@ -21,11 +22,21 @@ public class VoteServiceImpl implements VoteService {
         return counts;
     }
 
-    // 투표 생성
-    public Vote createVote(String user, Vote.VoteType voteType) {
-        Vote vote = new Vote();
-        vote.setUser(user);
-        vote.setVoteType(voteType);
-        return voteRepository.save(vote);
+    public Vote createOrUpdateVote(String user, Vote.VoteType voteType) {
+        // 사용자의 기존 투표 조회
+        Optional<Vote> existingVote = voteRepository.findByUser(user);
+
+        if (existingVote.isPresent()) {
+            // 기존 투표가 있는 경우 수정
+            Vote vote = existingVote.get();
+            vote.setVoteType(voteType);
+            return voteRepository.save(vote);
+        } else {
+            // 새로운 투표 생성
+            Vote vote = new Vote();
+            vote.setUser(user);
+            vote.setVoteType(voteType);
+            return voteRepository.save(vote);
+        }
     }
 }

@@ -26,7 +26,7 @@ public class HomeController {
     @PostMapping("/vote")
     public ResponseEntity<?> createVote(@RequestBody VoteDto voteDto) {
         try {
-            Vote vote = voteService.createVote(voteDto.getUser(), voteDto.getVoteType());
+            Vote vote = voteService.createOrUpdateVote(voteDto.getUser(), voteDto.getVoteType());
             return ResponseEntity.ok(VoteDto.from(vote));
         } catch (Exception e) {
             return ResponseEntity.badRequest().body("이미 투표한 사용자입니다.");
