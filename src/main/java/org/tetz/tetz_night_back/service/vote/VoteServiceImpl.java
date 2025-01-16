@@ -16,8 +16,8 @@ public class VoteServiceImpl implements VoteService {
 
     public Map<String, Long> getVoteCounts() {
         Map<String, Long> counts = new HashMap<>();
-        counts.put("참여", voteRepository.countByVoteType(Vote.VoteType.참여));
-        counts.put("불참", voteRepository.countByVoteType(Vote.VoteType.불참));
+        counts.put("attend", voteRepository.countByVoteType(Vote.VoteType.참여));
+        counts.put("notAttend", voteRepository.countByVoteType(Vote.VoteType.불참));
         return counts;
     }
 
