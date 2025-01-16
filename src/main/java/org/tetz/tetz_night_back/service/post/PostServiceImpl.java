@@ -44,8 +44,6 @@ public class PostServiceImpl implements PostService {
         post.setUser(user);  // Request에서 받은 uuid 사용
         post.setCreatedAt(new Timestamp(System.currentTimeMillis()));
 
-        System.out.println(post.getContent());
-
         Post savedPost = postRepository.save(post);
 
         return new PostDto(
