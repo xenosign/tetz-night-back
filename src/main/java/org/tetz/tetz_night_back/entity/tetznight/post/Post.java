@@ -1,4 +1,4 @@
-package org.tetz.tetz_night_back.entity.post;
+package org.tetz.tetz_night_back.entity.tetznight.post;
 
 
 import jakarta.persistence.*;
@@ -8,7 +8,6 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.sql.Timestamp;
-import java.time.LocalDateTime;
 import java.util.HashSet;
 import java.util.Set;
 

@@ -1,9 +1,8 @@
-package org.tetz.tetz_night_back.service.vote;
+package org.tetz.tetz_night_back.service.tetznight.vote;
 
 import org.springframework.stereotype.Service;
-import org.tetz.tetz_night_back.entity.vote.Vote;
+import org.tetz.tetz_night_back.entity.tetznight.vote.Vote;
 
-import java.util.List;
 import java.util.Map;
 
 @Service

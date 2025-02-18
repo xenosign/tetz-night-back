@@ -1,4 +1,4 @@
-package org.tetz.tetz_night_back.dto.post;
+package org.tetz.tetz_night_back.dto.tetznight.post;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

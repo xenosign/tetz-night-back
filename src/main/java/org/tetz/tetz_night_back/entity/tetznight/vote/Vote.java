@@ -1,4 +1,4 @@
-package org.tetz.tetz_night_back.entity.vote;
+package org.tetz.tetz_night_back.entity.tetznight.vote;
 
 import jakarta.persistence.*;
 import lombok.Getter;

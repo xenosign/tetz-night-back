@@ -1,9 +1,9 @@
-package org.tetz.tetz_night_back.service.vote;
+package org.tetz.tetz_night_back.service.tetznight.vote;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-import org.tetz.tetz_night_back.entity.vote.Vote;
-import org.tetz.tetz_night_back.repository.vote.VoteRepository;
+import org.tetz.tetz_night_back.entity.tetznight.vote.Vote;
+import org.tetz.tetz_night_back.repository.tetznight.vote.VoteRepository;
 
 import java.util.HashMap;
 import java.util.Map;

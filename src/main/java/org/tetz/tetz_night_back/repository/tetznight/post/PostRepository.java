@@ -1,10 +1,10 @@
-package org.tetz.tetz_night_back.repository.post;
+package org.tetz.tetz_night_back.repository.tetznight.post;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
-import org.tetz.tetz_night_back.entity.post.Post;
+import org.tetz.tetz_night_back.entity.tetznight.post.Post;
 
 
 import java.util.List;

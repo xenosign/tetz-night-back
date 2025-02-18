@@ -1,8 +1,8 @@
-package org.tetz.tetz_night_back.repository.vote;
+package org.tetz.tetz_night_back.repository.tetznight.vote;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
-import org.tetz.tetz_night_back.entity.vote.Vote;
+import org.tetz.tetz_night_back.entity.tetznight.vote.Vote;
 
 import java.util.Optional;
 

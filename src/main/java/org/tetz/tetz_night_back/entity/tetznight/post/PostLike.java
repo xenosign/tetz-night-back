@@ -1,4 +1,4 @@
-package org.tetz.tetz_night_back.entity.post;
+package org.tetz.tetz_night_back.entity.tetznight.post;
 
 import jakarta.persistence.*;
 import lombok.AccessLevel;

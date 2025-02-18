@@ -1,9 +1,9 @@
-package org.tetz.tetz_night_back.dto.vote;
+package org.tetz.tetz_night_back.dto.tetznight.vote;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import org.tetz.tetz_night_back.entity.vote.Vote;
+import org.tetz.tetz_night_back.entity.tetznight.vote.Vote;
 
 @Getter
 @NoArgsConstructor

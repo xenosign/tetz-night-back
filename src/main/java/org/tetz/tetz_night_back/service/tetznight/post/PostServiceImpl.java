@@ -1,15 +1,14 @@
-package org.tetz.tetz_night_back.service.post;
+package org.tetz.tetz_night_back.service.tetznight.post;
 
 import org.springframework.transaction.annotation.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-import org.tetz.tetz_night_back.dto.post.PostDto;
-import org.tetz.tetz_night_back.entity.post.Post;
-import org.tetz.tetz_night_back.entity.post.PostLike;
-import org.tetz.tetz_night_back.repository.post.PostLikeRepository;
-import org.tetz.tetz_night_back.repository.post.PostRepository;
+import org.tetz.tetz_night_back.dto.tetznight.post.PostDto;
+import org.tetz.tetz_night_back.entity.tetznight.post.Post;
+import org.tetz.tetz_night_back.entity.tetznight.post.PostLike;
+import org.tetz.tetz_night_back.repository.tetznight.post.PostLikeRepository;
+import org.tetz.tetz_night_back.repository.tetznight.post.PostRepository;
 
-import java.math.BigInteger;
 import java.sql.Timestamp;
 import java.util.List;
 import java.util.Optional;

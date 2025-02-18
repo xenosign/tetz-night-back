@@ -1,6 +1,6 @@
-package org.tetz.tetz_night_back.service.post;
+package org.tetz.tetz_night_back.service.tetznight.post;
 
-import org.tetz.tetz_night_back.dto.post.PostDto;
+import org.tetz.tetz_night_back.dto.tetznight.post.PostDto;
 
 import java.util.List;
 
